@@ -6,6 +6,18 @@ var Counter = React.createClass({
     });
   },
 
+  decrementCount() {
+    var count = this.state.count;
+
+    if (count === 0) {
+      return;
+    }
+
+    this.setState({
+      count: count - 1
+    });
+  },
+
   getInitialState() {
     return {
       count: 0
@@ -16,7 +28,8 @@ var Counter = React.createClass({
     return (
       <div className="counter">
       <h1>Count: {this.state.count}</h1>
-      <button type="button" onClick={this.incrementCount}>Increment</button>
+      <button type="button" className="add" onClick={this.incrementCount}>Increment</button>
+      <button type="button" className="sub" onClick={this.decrementCount}>Decrement</button>
       </div>
     );
   }

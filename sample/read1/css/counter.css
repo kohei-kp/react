@@ -6,7 +6,7 @@ body {
 .counter {
   width: 300px;
   margin: auto;
-  background: #9b59b6;
+  background: #646464;
   color: white;
   padding: 20px;
   text-align: center;
@@ -18,17 +18,37 @@ body {
 }
 
 .counter button {
-  background: #f1c40f;
+  margin: 5px 0 0 5px;
+}
+
+.counter button.add {
+  background: #ff6644;
   border: 0;
-  box-shadow: 0px 5px 0px darken(#f1c50f, 20%);
+  box-shadow: 0px 5px 0px darken(#ff6644, 20%);
   padding: 20px;
   width: 100%;
   outline: none;
   border-radius: 3px;
-  color: darken(#8e44ad, 10%);
+  color: darken(#ff6644, 10%);
   font-weight: bold;
   font-size: 15px;
 }
-.counter button:hover {
-  background: #b1c40f;
+.counter button.add:hover {
+  background: #cc5533;
+}
+
+.counter button.sub {
+  background: #2266ff;
+  border: 0;
+  box-shadow: 0px 5px 0px darken(#2266ff, 20%);
+  padding: 20px;
+  width: 100%;
+  outline: none;
+  border-radius: 3px;
+  color: darken(#2266ff, 10%);
+  font-weight: bold;
+  font-size: 15px;
+}
+.counter button.sub:hover {
+  background: #1155cc;
 }

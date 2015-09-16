@@ -1,4 +1,3 @@
-/** @jsx React.DOM */
 var Counter = React.createClass({
   incrementCount() {
     this.setState({

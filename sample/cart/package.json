@@ -4,8 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "watchify -o js/bundle.js -v -d .",
+    "build": "browserify . | uglifyjs -cm >js/bundle.min.js"
+  },
+  "browserify": {
+    "transform": [
+      "babelify",
+      "reactify",
+      "envify"
+    ]
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babelify": "^6.3.0",
+    "browserify": "^11.1.0",
+    "envify": "^3.4.0",
+    "react": "^0.13.3",
+    "reactify": "^1.1.1",
+    "watchify": "^3.4.0"
+  }
 }

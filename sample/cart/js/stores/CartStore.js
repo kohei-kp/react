@@ -41,7 +41,7 @@ var CartStore = _.extend({}, EventEmitter.prototype, {
 
     for (product in _products) {
       if (_products.hasOwnProperty(product)) {
-        total += _products[product].price * _ products[product].quantity;
+        total += _products[product].price * _products[product].quantity;
       }
     }
 

@@ -34,7 +34,7 @@ var FluxCartActions = {
     AppDispatcher.handleAction({
       actionType: FluxCartConstants.CART_REMOVE,
       sku: sku
-    }
+    });
   },
 
   // Update cart visibility status

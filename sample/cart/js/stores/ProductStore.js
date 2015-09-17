@@ -42,7 +42,7 @@ var ProductStore = _.exnted({}, EventEmitter.prototype, {
 
   // Remove change listener
   removeChangeListener(callback) {
-    this.removeListener('change' callback);
+    this.removeListener('change', callback);
   }
 });
 

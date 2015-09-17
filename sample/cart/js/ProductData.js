@@ -7,7 +7,7 @@ module.exports = {
         id: '0011001',
         name: 'Anco',
         image: 'anco.png',
-        description: "This is Anco's Maximin Liebkne',
+        description: "This is Anco's Maximin Liebkne",
         variants: [
           {
             sku: '123123',

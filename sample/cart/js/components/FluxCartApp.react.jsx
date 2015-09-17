@@ -1,8 +1,8 @@
 var React        = require('react'),
     CartStpre    = require('../stores/CartStore'),
     ProductStore = require('../stores/ProductStore'),
-    FluxProduct  = require('./FluxProduct.react'),
-    FluxCart     = require('./FluxCart.react');
+    FluxProduct  = require('./FluxProduct.react.jsx'),
+    FluxCart     = require('./FluxCart.react.jsx');
 
 // Method to retrieve state from Stores
 function getCartStore() {

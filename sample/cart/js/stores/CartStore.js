@@ -77,7 +77,7 @@ AppDispatcher.register(payload => {
   switch (action.actionType) {
   // Respond to CART_ADD action
   case FluxCartConstants.CART_ADD:
-    add(action.sku, action.upate);
+    add(action.sku, action.update);
     break;
 
   // Respond tp CART_VISIBLE action

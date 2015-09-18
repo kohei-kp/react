@@ -7,7 +7,7 @@ var FluxCartActions = {
   // Receive inital product data
   receiveProduct(data) {
     AppDispatcher.handleAction({
-      actionType: FluxCartConstants/RECEIVE_DATA,
+      actionType: FluxCartConstants.RECEIVE_DATA,
       data: data
     });
   },

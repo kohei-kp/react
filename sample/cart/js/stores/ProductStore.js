@@ -18,7 +18,7 @@ function setSelected(index) {
 }
 
 // Extend ProductStore with EventEmitter to add eventing capabilities
-var ProductStore = _.exnted({}, EventEmitter.prototype, {
+var ProductStore = _.extend({}, EventEmitter.prototype, {
 
   // Return Product data
   getProduct() {

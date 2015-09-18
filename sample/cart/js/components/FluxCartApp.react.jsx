@@ -1,5 +1,5 @@
 var React        = require('react'),
-    CartStpre    = require('../stores/CartStore'),
+    CartStore    = require('../stores/CartStore'),
     ProductStore = require('../stores/ProductStore'),
     FluxProduct  = require('./FluxProduct.react.jsx'),
     FluxCart     = require('./FluxCart.react.jsx');

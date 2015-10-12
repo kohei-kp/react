@@ -5,7 +5,7 @@ var React        = require('react'),
     FluxCart     = require('./FluxCart.react.jsx');
 
 // Method to retrieve state from Stores
-function getCartStore() {
+function getCartState() {
   return {
     product: ProductStore.getProduct(),
     selectedProduct: ProductStore.getSelected(),
@@ -21,13 +21,19 @@ var FluxCartApp = React.createClass({
 
   // Get initial state from stores
   getInitialState() {
-    return getCartStore();
+    return getCartState();
   },
 
   // Add change listeners to stores
-  componentDidMound() {
+  componentDidMount() {
     ProductStore.addChangeListener(this._onChange);
     CartStore.addChangeListener(this._onChange);
+  },
+
+  // Remove change listeners from stores
+  componentWillUnmount() {
+    ProductStore.removeChangeListener(this._onChange);
+    CartSto.removeChangeListener(this._onChange);
   },
 
   // Render our child components, passing state via props
@@ -42,7 +48,7 @@ var FluxCartApp = React.createClass({
 
   // Method to setState based upon Store change
   _onChange() {
-    this.setState(getCartStore());
+    this.setState(getCartState());
   }
 
 });

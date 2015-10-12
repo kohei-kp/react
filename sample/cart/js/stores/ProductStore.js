@@ -1,5 +1,5 @@
-var AppDispatcher = require('../dispatcher/AppDispatcher');
-var EventEmitter = require('events').EventEmitter;
+var AppDispatcher     = require('../dispatcher/AppDispatcher');
+var EventEmitter      = require('events').EventEmitter;
 var FluxCartConstants = require('../constants/FluxCartConstants');
 var _ = require('underscore');
 
@@ -66,6 +66,11 @@ AppDispatcher.register(payload => {
   default:
     return true;
   }
+
+  // If action was responded to, emit change event
+  ProductStore.emitChange();
+
+  return true;
 });
 
 module.exports = ProductStore;

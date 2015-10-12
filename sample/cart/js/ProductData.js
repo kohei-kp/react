@@ -24,6 +24,11 @@ module.exports = {
             type: 'test3',
             price: 19.99,
             inventory: 3
+          }, {
+            sku: '123126',
+            type: 'test4',
+            price: 25.99,
+            inventory: 0
           }
         ]
       }

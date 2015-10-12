@@ -1,4 +1,4 @@
-window.React = require('react');
+var React = require('react');
 
 var ProductData = require('./ProductData'),
     CartAPI     = require('./utils/CartAPI'),

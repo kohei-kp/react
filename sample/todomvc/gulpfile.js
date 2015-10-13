@@ -4,7 +4,7 @@ var browserSync = require('browser-sync');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var babelify = require('babelify');
-var flowtype= require('gulp-flowtype');
+var flowtype = require('gulp-flowtype');
 
 gulp.task('serve', function (done) {
   browserSync({
@@ -43,15 +43,14 @@ gulp.task('watch', ['serve'], function () {
 });
 
 gulp.task('typecheck', function () {
-  return gulp.src(['./app.jsx'])
-    .pipe(flowtype({
+  var chk = flowtype({
       all: false,
       weak: false,
-      declarations: './declarations',
-      killFlow: false,
-      beep: true,
-      abort: false
-    }));
+      killFlow: false
+  });
+
+  gulp.src(['./app.jsx'])
+  .pipe(chk);
 });
 
 gulp.task('default', ['watch']);

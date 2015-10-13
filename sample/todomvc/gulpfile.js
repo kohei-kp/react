@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var watch = require('gulp-watch');
 var browserSync = require('browser-sync');
 var browserify = require('browserify');
-var reactify = require('reactify');
 var source = require('vinyl-source-stream');
 var babelify = require('babelify');
 var flowtype= require('gulp-flowtype');
@@ -22,15 +21,6 @@ gulp.task('serve', function (done) {
 });
 
 gulp.task('build', function () {
-  //gulp.src(['./src/**/*.jsx', './src/**.js'])
-  //.pipe(flowtype({
-  //  all: false,
-  //  weak: false,
-  //  killFlow: false,
-  //  beep: true,
-  //  abort: false
-  //}));
-
   browserify(['./app.jsx'])
   .transform(babelify)
   .bundle()
@@ -50,6 +40,18 @@ gulp.task('watch', ['serve'], function () {
   watch(['./*.html'], browserSync.reload); // html
   watch(['build/bundle.js'], browserSync.reload); // JavaScript
   watch(['./css/**.css'], browserSync.reload); // css
+});
+
+gulp.task('typecheck', function () {
+  return gulp.src(['./app.jsx'])
+    .pipe(flowtype({
+      all: false,
+      weak: false,
+      declarations: './declarations',
+      killFlow: false,
+      beep: true,
+      abort: false
+    }));
 });
 
 gulp.task('default', ['watch']);

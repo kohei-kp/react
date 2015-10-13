@@ -8,6 +8,7 @@
  *
  * App
  */
+/* @flow */
 var React = require('react');
 var ReactDOM = require('react-dom');
 var TodoApp = require('./src/components/TodoApp.react.jsx');
